@@ -21,3 +21,12 @@ Paper: `report/dolos.md`, PDF in `report/build/`.
 ## Running
 
 Python 3.12 with `uv`. GPU runs for the Rosenhan games used Modal. Tests: `pytest tests/`.
+
+## Prior code
+
+The sprint starter repository, `poseidon-research/collusion_hackathon` at commit d585a7b, is not included here. Clone it into `starter/` to run the code.
+
+- The Rosenhan games subclass its Liar's Bar secret-channel game (`starter/`) without editing it.
+- The Dolos scripts load the models through its `redteaming/` folder (`generate.py` and its pinned model revisions).
+
+All code under `src/`, `redteam/` and `tests/` was written during the sprint, October 23 to 25, 2026.
