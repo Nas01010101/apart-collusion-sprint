@@ -1,0 +1,288 @@
+{
+ "cell_means": {
+  "base-seller_comms": {
+   "P": 0.05682200000000008,
+   "pressure": 0.046,
+   "coalition": 1.0,
+   "regulator": 0.002,
+   "phrases_per_seller_round": 5.450000000000001,
+   "type_overt": 0.20400000000000001,
+   "type_tacit": 0.10600000000000001,
+   "non_ok": 1.0,
+   "price_signal": 0.0
+  },
+  "oversight": {
+   "P": -0.31622800000000006,
+   "pressure": 0.046,
+   "coalition": 0.36400000000000005,
+   "regulator": 0.6280000000000001,
+   "phrases_per_seller_round": 2.7079999999999997,
+   "type_overt": 0.0,
+   "type_tacit": 0.45200000000000007,
+   "non_ok": 0.4314270609561133,
+   "price_signal": 0.04090332975295381
+  },
+  "boss_pressure": {
+   "P": 0.6449800000000001,
+   "pressure": 0.11399999999999999,
+   "coalition": 1.0,
+   "regulator": 0.0,
+   "phrases_per_seller_round": 5.476,
+   "type_overt": 0.178,
+   "type_tacit": 0.28600000000000003,
+   "non_ok": 1.0,
+   "price_signal": 0.0
+  },
+  "boss_pressure-oversight": {
+   "P": 0.6291359999999999,
+   "pressure": 0.22600000000000003,
+   "coalition": 0.37,
+   "regulator": 0.462,
+   "phrases_per_seller_round": 2.96,
+   "type_overt": 0.0,
+   "type_tacit": 0.688,
+   "non_ok": 0.1823278778684561,
+   "price_signal": 0.00301010101010101
+  },
+  "base": {
+   "P": -0.21548199999999987,
+   "pressure": 0.09,
+   "coalition": 0.3,
+   "regulator": 0.0,
+   "phrases_per_seller_round": 2.7859999999999996,
+   "type_overt": 0.0,
+   "type_tacit": 0.7020000000000002,
+   "non_ok": 0.0,
+   "price_signal": 0.0
+  }
+ },
+ "tests": {
+  "coalition_ceo_gagged_vs_ceo_open": {
+   "diff": -0.63,
+   "p": 0.00029997000299970003
+  },
+  "pressure_ceo_gagged_vs_none_gagged": {
+   "diff": 0.18000000000000005,
+   "p": 9.999000099990002e-05
+  },
+  "pressure_ceo_gagged_vs_ceo_open": {
+   "diff": 0.11200000000000004,
+   "p": 0.061493850614938506
+  },
+  "price_signal_ceo_gagged_vs_none_gagged": {
+   "diff": -0.0378932287428528,
+   "p": 0.4086591340865913
+  },
+  "tacit_ceo_gagged_vs_none_gagged": {
+   "diff": 0.23599999999999988,
+   "p": 0.00019998000199980003
+  },
+  "oversight_spearman_P_vs_gag_round": -0.10562266547422455,
+  "oversight_spearman_P_vs_price_signal": 0.21624335800309782,
+  "boss_pressure-oversight_spearman_P_vs_gag_round": 0.3021019648197444,
+  "boss_pressure-oversight_spearman_P_vs_price_signal": -0.39789946034922286
+ },
+ "exploratory_cell_ci95": {
+  "base-seller_comms": {
+   "coalition": {
+    "mean": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "pressure": {
+    "mean": 0.046,
+    "ci95": [
+     0.0039500000000000455,
+     0.12000000000000002
+    ]
+   },
+   "regulator": {
+    "mean": 0.002,
+    "ci95": [
+     0.0,
+     0.006
+    ]
+   },
+   "type_tacit": {
+    "mean": 0.10600000000000001,
+    "ci95": [
+     0.036000000000000004,
+     0.196
+    ]
+   },
+   "price_signal": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "oversight": {
+   "coalition": {
+    "mean": 0.36400000000000005,
+    "ci95": [
+     0.28195,
+     0.454
+    ]
+   },
+   "pressure": {
+    "mean": 0.046,
+    "ci95": [
+     0.022000000000000002,
+     0.068
+    ]
+   },
+   "regulator": {
+    "mean": 0.6280000000000001,
+    "ci95": [
+     0.54,
+     0.702
+    ]
+   },
+   "type_tacit": {
+    "mean": 0.45200000000000007,
+    "ci95": [
+     0.404,
+     0.512
+    ]
+   },
+   "price_signal": {
+    "mean": 0.04090332975295381,
+    "ci95": [
+     0.0,
+     0.11558754027926961
+    ]
+   }
+  },
+  "boss_pressure": {
+   "coalition": {
+    "mean": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "pressure": {
+    "mean": 0.11399999999999999,
+    "ci95": [
+     0.033999999999999996,
+     0.22599999999999998
+    ]
+   },
+   "regulator": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "type_tacit": {
+    "mean": 0.28600000000000003,
+    "ci95": [
+     0.1,
+     0.496
+    ]
+   },
+   "price_signal": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "boss_pressure-oversight": {
+   "coalition": {
+    "mean": 0.37,
+    "ci95": [
+     0.33000000000000007,
+     0.41200000000000003
+    ]
+   },
+   "pressure": {
+    "mean": 0.22600000000000003,
+    "ci95": [
+     0.188,
+     0.26200000000000007
+    ]
+   },
+   "regulator": {
+    "mean": 0.462,
+    "ci95": [
+     0.41200000000000003,
+     0.514
+    ]
+   },
+   "type_tacit": {
+    "mean": 0.688,
+    "ci95": [
+     0.64,
+     0.7339999999999999
+    ]
+   },
+   "price_signal": {
+    "mean": 0.00301010101010101,
+    "ci95": [
+     0.0,
+     0.008
+    ]
+   }
+  },
+  "base": {
+   "coalition": {
+    "mean": 0.3,
+    "ci95": [
+     0.23000000000000004,
+     0.37
+    ]
+   },
+   "pressure": {
+    "mean": 0.09,
+    "ci95": [
+     0.024,
+     0.17400000000000002
+    ]
+   },
+   "regulator": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "type_tacit": {
+    "mean": 0.7020000000000002,
+    "ci95": [
+     0.608,
+     0.792
+    ]
+   },
+   "price_signal": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   }
+  }
+ },
+ "exploratory_spearman_P_vs_gag_round_ci95": {
+  "oversight": {
+   "rho": -0.10562266547422455,
+   "ci95": [
+    -0.8553372034476996,
+    0.8157292915591554
+   ]
+  },
+  "boss_pressure-oversight": {
+   "rho": 0.3021019648197444,
+   "ci95": [
+    -0.42838316964357875,
+    0.9195001632452084
+   ]
+  }
+ }
+}

@@ -1,0 +1,722 @@
+[
+ {
+  "n_games": 15,
+  "cp": 0.0,
+  "detector": "fixed",
+  "metric": "false_alarm",
+  "rate": 0.6366666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.0,
+  "detector": "fixed_mm",
+  "metric": "false_alarm",
+  "rate": 0.71,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.0,
+  "detector": "perm",
+  "metric": "false_alarm",
+  "rate": 0.05,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.2,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.31333333333333335,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.2,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.3233333333333333,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.2,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.04,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.4,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.55,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.4,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.5466666666666666,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.4,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.15666666666666668,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.6,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.8366666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.6,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.83,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 0.6,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.49333333333333335,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 1.0,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 1.0,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 15,
+  "cp": 1.0,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.0,
+  "detector": "fixed",
+  "metric": "false_alarm",
+  "rate": 0.4,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.0,
+  "detector": "fixed_mm",
+  "metric": "false_alarm",
+  "rate": 0.43333333333333335,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.0,
+  "detector": "perm",
+  "metric": "false_alarm",
+  "rate": 0.03333333333333333,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.2,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.2966666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.2,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.3,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.2,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.06,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.4,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.7166666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.4,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.7166666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.4,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.43666666666666665,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.6,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.98,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.6,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.97,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 0.6,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.9066666666666666,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 1.0,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 1.0,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 30,
+  "cp": 1.0,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.0,
+  "detector": "fixed",
+  "metric": "false_alarm",
+  "rate": 0.09,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.0,
+  "detector": "fixed_mm",
+  "metric": "false_alarm",
+  "rate": 0.09333333333333334,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.0,
+  "detector": "perm",
+  "metric": "false_alarm",
+  "rate": 0.03333333333333333,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.2,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.2866666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.2,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.2866666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.2,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.16333333333333333,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.4,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.8733333333333333,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.4,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.8666666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.4,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.8033333333333333,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.6,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.6,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 0.6,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 1.0,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 1.0,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 60,
+  "cp": 1.0,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.0,
+  "detector": "fixed",
+  "metric": "false_alarm",
+  "rate": 0.0033333333333333335,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.0,
+  "detector": "fixed_mm",
+  "metric": "false_alarm",
+  "rate": 0.0033333333333333335,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.0,
+  "detector": "perm",
+  "metric": "false_alarm",
+  "rate": 0.04666666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.2,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.24333333333333335,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.2,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.24333333333333335,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.2,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.44666666666666666,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.4,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.95,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.4,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.95,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.4,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.99,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.6,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.6,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 0.6,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 1.0,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 1.0,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 120,
+  "cp": 1.0,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.0,
+  "detector": "fixed",
+  "metric": "false_alarm",
+  "rate": 0.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.0,
+  "detector": "fixed_mm",
+  "metric": "false_alarm",
+  "rate": 0.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.0,
+  "detector": "perm",
+  "metric": "false_alarm",
+  "rate": 0.06,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.2,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.19,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.2,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.19,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.2,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 0.8566666666666667,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.4,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.4,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.4,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.6,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.6,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 0.6,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 1.0,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 1.0,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 250,
+  "cp": 1.0,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.0,
+  "detector": "fixed",
+  "metric": "false_alarm",
+  "rate": 0.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.0,
+  "detector": "fixed_mm",
+  "metric": "false_alarm",
+  "rate": 0.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.0,
+  "detector": "perm",
+  "metric": "false_alarm",
+  "rate": 0.023333333333333334,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.2,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 0.08,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.2,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 0.08,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.2,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.4,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.4,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.4,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.6,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.6,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 0.6,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 1.0,
+  "detector": "fixed",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 1.0,
+  "detector": "fixed_mm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ },
+ {
+  "n_games": 1000,
+  "cp": 1.0,
+  "detector": "perm",
+  "metric": "accuracy",
+  "rate": 1.0,
+  "reps": 300
+ }
+]

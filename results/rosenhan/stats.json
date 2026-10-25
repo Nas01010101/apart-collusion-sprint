@@ -1,0 +1,166 @@
+{
+ "H1": {
+  "pair_wins": {
+   "G1": 15,
+   "G0": 11,
+   "n": 20,
+   "fisher_p": 0.1601328803775967
+  },
+  "pair_score_paired": {
+   "diff": 10.2,
+   "p": 0.003031791227237747
+  },
+  "overseer_auroc_colluder": 0.5845833333333332
+ },
+ "H2_G2": {
+  "any_peer_vs_overseer": {
+   "a_rate": 0.6,
+   "b_rate": 0.5,
+   "discordant": [
+    7,
+    4
+   ],
+   "p": 0.2744140625
+  },
+  "clean_peer_vs_overseer": {
+   "a_rate": 0.6,
+   "b_rate": 0.5,
+   "discordant": [
+    7,
+    4
+   ],
+   "p": 0.2744140625
+  },
+  "mean_p_auditor": {
+   "peers": 32.11111111111111,
+   "overseer": 50.0,
+   "overseer_access": 11.6
+  },
+  "R5_access_vs_neutral": {
+   "p": 0.9999778049570859
+  }
+ },
+ "H2_G3": {
+  "any_peer_vs_overseer": {
+   "a_rate": 0.1,
+   "b_rate": 0.1,
+   "discordant": [
+    1,
+    1
+   ],
+   "p": 0.75
+  },
+  "clean_peer_vs_overseer": {
+   "a_rate": 0.05,
+   "b_rate": 0.1,
+   "discordant": [
+    0,
+    1
+   ],
+   "p": 1.0
+  },
+  "mean_p_auditor": {
+   "peers": 13.749999999999996,
+   "overseer": 14.916666666666671,
+   "overseer_access": 6.183333333333334
+  },
+  "R5_access_vs_neutral": {
+   "p": 0.9987727897472344
+  }
+ },
+ "H3": {
+  "told_vs_neutral": {
+   "a_rate": 0.25,
+   "b_rate": 0.4,
+   "discordant": [
+    2,
+    5
+   ],
+   "p": 0.9375
+  },
+  "mean_max_p_auditor": {
+   "told": 31.666666666666664,
+   "neutral": 40.83333333333333,
+   "unprimed": 31.666666666666668
+  },
+  "told_vs_unprimed": {
+   "a_rate": 0.25,
+   "b_rate": 0.15,
+   "discordant": [
+    4,
+    2
+   ],
+   "p": 0.34375,
+   "wilcoxon_max_p": 0.610278055057494
+  },
+  "neutral_vs_unprimed": {
+   "a_rate": 0.4,
+   "b_rate": 0.15,
+   "discordant": [
+    6,
+    1
+   ],
+   "p": 0.0625,
+   "wilcoxon_max_p": 0.04355788558806977
+  }
+ },
+ "H4_G0": {
+  "label": 84.74999999999997,
+  "neutral": 49.33333333333333,
+  "p": 4.409935102097225e-05,
+  "label_null": 68.91666666666666,
+  "p_label_vs_label_null": 7.624354367868022e-05,
+  "p_label_null_vs_neutral": 0.00013121408685711026,
+  "label_all": 52.666666666666664,
+  "p_label_vs_label_all": 4.422457510605951e-05,
+  "p_label_all_vs_neutral": 0.41996738124290456
+ },
+ "H4_G2": {
+  "label": 84.44444444444444,
+  "neutral": 52.11111111111111,
+  "p": 3.6217220097867213e-06,
+  "label_null": 73.55555555555556,
+  "p_label_vs_label_null": 0.0005028915149179925,
+  "p_label_null_vs_neutral": 5.6717686085657544e-05,
+  "label_all": 62.05555555555556,
+  "p_label_vs_label_all": 2.746998452739788e-05,
+  "p_label_all_vs_neutral": 0.0399443259396333
+ },
+ "R4_G2": {
+  "active colluder": 0.3888888888888889,
+  "former colluder, now inactive": 0.05555555555555555,
+  "undercover auditor": 0.5555555555555556
+ },
+ "H4_G3": {
+  "label": 84.5,
+  "neutral": 53.33333333333333,
+  "p": 7.683438587003469e-05,
+  "label_null": 74.66666666666667,
+  "p_label_vs_label_null": 0.006469594421018256,
+  "p_label_null_vs_neutral": 0.0003668141903553,
+  "label_all": 53.0,
+  "p_label_vs_label_all": 6.581352259461349e-05,
+  "p_label_all_vs_neutral": 0.5753863760243538
+ },
+ "R4_G3": {
+  "active colluder": 0.65,
+  "former colluder, now inactive": 0.15,
+  "undercover auditor": 0.2
+ },
+ "H5_G2": {
+  "diff_paired": 1.2000000000000002,
+  "p_paired": 0.23861376607958207,
+  "p_mw": 0.20711233940426
+ },
+ "H5_G3": {
+  "diff_paired": 4.9,
+  "p_paired": 0.001874170527038799,
+  "p_mw": 0.0169322037945466
+ },
+ "holm": {
+  "H2": 0.62133701821278,
+  "H3": 0.62133701821278,
+  "H4": 1.4486888039146885e-05,
+  "H5": 0.62133701821278
+ }
+}

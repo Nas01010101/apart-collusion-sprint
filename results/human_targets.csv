@@ -1,0 +1,113 @@
+source,table_or_figure,regime,alpha,F,measure,value,n_sessions,note
+RAND2012_WP2011,Table 4,L-Faire,0,0,comm_attempt_rate,0.835,3,Stockholm+Rome pooled; sessions from Table 6
+RAND2012_WP2011,Table 4,Fine,0.1,200,comm_attempt_rate,0.566,4,Stockholm+Rome pooled; sessions from Table 6
+RAND2012_WP2011,Table 4,Leniency,0.1,200,comm_attempt_rate,0.377,4,Stockholm+Rome pooled; sessions from Table 6
+RAND2012_WP2011,Table 4,Reward,0.1,200,comm_attempt_rate,0.484,2,Stockholm+Rome pooled; sessions from Table 6
+RAND2012_WP2011,Table 4,L-Faire,0,0,cartel_formation_rate,0.716,3,
+RAND2012_WP2011,Table 4,Fine,0.1,200,cartel_formation_rate,0.315,4,
+RAND2012_WP2011,Table 4,Leniency,0.1,200,cartel_formation_rate,0.178,4,
+RAND2012_WP2011,Table 4,Reward,0.1,200,cartel_formation_rate,0.22,2,
+RAND2012_WP2011,Table 4,L-Faire,0,0,comm_attempt_rate_first_period_in_match,0.925,3,
+RAND2012_WP2011,Table 4,Fine,0.1,200,comm_attempt_rate_first_period_in_match,0.684,4,
+RAND2012_WP2011,Table 4,Leniency,0.1,200,comm_attempt_rate_first_period_in_match,0.437,4,
+RAND2012_WP2011,Table 4,Reward,0.1,200,comm_attempt_rate_first_period_in_match,0.481,2,
+RAND2012_WP2011,Table 4,L-Faire,0,0,report_rate,,3,empty: reporting not allowed in L-Faire
+RAND2012_WP2011,Table 4,Fine,0.1,200,report_rate,0.092,4,
+RAND2012_WP2011,Table 4,Leniency,0.1,200,report_rate,0.507,4,
+RAND2012_WP2011,Table 4,Reward,0.1,200,report_rate,0.937,2,
+RAND2012_WP2011,Table 4,L-Faire,0,0,report_rate_first_comm,,3,empty: reporting not allowed in L-Faire
+RAND2012_WP2011,Table 4,Fine,0.1,200,report_rate_first_comm,0.136,4,
+RAND2012_WP2011,Table 4,Leniency,0.1,200,report_rate_first_comm,0.761,4,
+RAND2012_WP2011,Table 4,Reward,0.1,200,report_rate_first_comm,0.983,2,
+RAND2012_WP2011,Table 4,L-Faire,0,0,cartel_incidence,0.961,3,
+RAND2012_WP2011,Table 4,Fine,0.1,200,cartel_incidence,0.583,4,
+RAND2012_WP2011,Table 4,Leniency,0.1,200,cartel_incidence,0.264,4,
+RAND2012_WP2011,Table 4,Reward,0.1,200,cartel_incidence,0.23,2,
+RAND2012_WP2011,Table 5,L-Faire,0,0,avg_price,4.917,3,
+RAND2012_WP2011,Table 5,Fine,0.1,200,avg_price,5.349,4,
+RAND2012_WP2011,Table 5,Leniency,0.1,200,avg_price,4.845,4,
+RAND2012_WP2011,Table 5,Reward,0.1,200,avg_price,3.973,2,
+RAND2012_WP2011,Table 5,L-Faire,0,0,ring_price,4.971,3,Table 5 label 'Cartel price'
+RAND2012_WP2011,Table 5,Fine,0.1,200,ring_price,6.144,4,Table 5 label 'Cartel price'
+RAND2012_WP2011,Table 5,Leniency,0.1,200,ring_price,7.024,4,Table 5 label 'Cartel price'
+RAND2012_WP2011,Table 5,Reward,0.1,200,ring_price,5.339,2,Table 5 label 'Cartel price'
+RAND2012_WP2011,Table 5,L-Faire,0,0,price_outside_cartels,3.5,3,
+RAND2012_WP2011,Table 5,Fine,0.1,200,price_outside_cartels,4.233,4,
+RAND2012_WP2011,Table 5,Leniency,0.1,200,price_outside_cartels,4.063,4,
+RAND2012_WP2011,Table 5,Reward,0.1,200,price_outside_cartels,3.567,2,
+RAND2012_WP2011,Table 5,L-Faire,0,0,agreed_price,7.689,3,
+RAND2012_WP2011,Table 5,Fine,0.1,200,agreed_price,8.242,4,
+RAND2012_WP2011,Table 5,Leniency,0.1,200,agreed_price,8.218,4,
+RAND2012_WP2011,Table 5,Reward,0.1,200,agreed_price,8.512,2,
+RAND2012_WP2011,Table 5,L-Faire,0,0,price_deviation_rate,0.564,3,
+RAND2012_WP2011,Table 5,Fine,0.1,200,price_deviation_rate,0.424,4,
+RAND2012_WP2011,Table 5,Leniency,0.1,200,price_deviation_rate,0.373,4,
+RAND2012_WP2011,Table 5,Reward,0.1,200,price_deviation_rate,0.782,2,
+RAND2012_WP2011,Table 5,L-Faire,0,0,ring_price_first_comm,5.929,3,
+RAND2012_WP2011,Table 5,Fine,0.1,200,ring_price_first_comm,6.99,4,
+RAND2012_WP2011,Table 5,Leniency,0.1,200,ring_price_first_comm,6.663,4,
+RAND2012_WP2011,Table 5,Reward,0.1,200,ring_price_first_comm,5.483,2,
+RAND2012_WP2011,Table 5,L-Faire,0,0,agreed_price_first_comm,7.881,3,
+RAND2012_WP2011,Table 5,Fine,0.1,200,agreed_price_first_comm,8.129,4,
+RAND2012_WP2011,Table 5,Leniency,0.1,200,agreed_price_first_comm,7.886,4,
+RAND2012_WP2011,Table 5,Reward,0.1,200,agreed_price_first_comm,8.1,2,
+RAND2012_WP2011,Table 5,L-Faire,0,0,price_deviation_rate_first_comm,0.59,3,
+RAND2012_WP2011,Table 5,Fine,0.1,200,price_deviation_rate_first_comm,0.408,4,
+RAND2012_WP2011,Table 5,Leniency,0.1,200,price_deviation_rate_first_comm,0.443,4,
+RAND2012_WP2011,Table 5,Reward,0.1,200,price_deviation_rate_first_comm,0.717,2,
+RAND2012_WP2011,Table 3,Fine,0.1,200,secret_report_rate_given_own_deviation,0.002,4,
+RAND2012_WP2011,Table 3,Leniency,0.1,200,secret_report_rate_given_own_deviation,0.704,4,
+RAND2012_WP2011,Table 3,Reward,0.1,200,secret_report_rate_given_own_deviation,0.905,2,
+RAND2012_WP2011,Table 3,Fine,0.1,200,public_report_rate_given_only_rival_deviated,0.286,4,
+RAND2012_WP2011,Table 3,Leniency,0.1,200,public_report_rate_given_only_rival_deviated,0.481,4,
+RAND2012_WP2011,Table 3,Reward,0.1,200,public_report_rate_given_only_rival_deviated,0.333,2,
+IFN859_2010,Figure 1,Communication,0,0,comm_decision_rate_not_in_ring,0.777,1,bar label printed in figure (not digitised); SSE/EFI WP 696 Table 3 gives same values to 2 dp; Antitrust=Fine
+IFN859_2010,Figure 1,Fine,0,1000,comm_decision_rate_not_in_ring,0.538,1,bar label printed in figure (not digitised); SSE/EFI WP 696 Table 3 gives same values to 2 dp; Antitrust=Fine
+IFN859_2010,Figure 1,Fine,0.02,1000,comm_decision_rate_not_in_ring,0.378,1,bar label printed in figure (not digitised); SSE/EFI WP 696 Table 3 gives same values to 2 dp; Antitrust=Fine
+IFN859_2010,Figure 1,Fine,0.1,200,comm_decision_rate_not_in_ring,0.59,1,bar label printed in figure (not digitised); SSE/EFI WP 696 Table 3 gives same values to 2 dp; Antitrust=Fine
+IFN859_2010,Figure 1,Fine,0.2,300,comm_decision_rate_not_in_ring,0.452,1,bar label printed in figure (not digitised); SSE/EFI WP 696 Table 3 gives same values to 2 dp; Antitrust=Fine
+IFN859_2010,Figure 1,Leniency,0,1000,comm_decision_rate_not_in_ring,0.28,1,bar label printed in figure (not digitised); SSE/EFI WP 696 Table 3 gives same values to 2 dp; Antitrust=Fine
+IFN859_2010,Figure 1,Leniency,0.02,1000,comm_decision_rate_not_in_ring,0.251,1,bar label printed in figure (not digitised); SSE/EFI WP 696 Table 3 gives same values to 2 dp; Antitrust=Fine
+IFN859_2010,Figure 1,Leniency,0.1,200,comm_decision_rate_not_in_ring,0.344,1,bar label printed in figure (not digitised); SSE/EFI WP 696 Table 3 gives same values to 2 dp; Antitrust=Fine
+IFN859_2010,Figure 1,Leniency,0.2,300,comm_decision_rate_not_in_ring,0.436,1,bar label printed in figure (not digitised); SSE/EFI WP 696 Table 3 gives same values to 2 dp; Antitrust=Fine
+KKV2014_JLEO_precursor,Figure 2,L-Faire,0,0,comm_decision_rate_not_in_ring,0.777,1,bar label printed in figure as %; not digitised
+KKV2014_JLEO_precursor,Figure 2,Fine,0,1000,comm_decision_rate_not_in_ring,0.538,1,bar label printed in figure as %; not digitised
+KKV2014_JLEO_precursor,Figure 2,Fine,0.02,1000,comm_decision_rate_not_in_ring,0.378,1,bar label printed in figure as %; not digitised
+KKV2014_JLEO_precursor,Figure 2,Fine,0.1,200,comm_decision_rate_not_in_ring,0.59,1,bar label printed in figure as %; not digitised
+KKV2014_JLEO_precursor,Figure 2,Leniency,0,1000,comm_decision_rate_not_in_ring,0.28,1,bar label printed in figure as %; not digitised
+KKV2014_JLEO_precursor,Figure 2,Leniency,0.02,1000,comm_decision_rate_not_in_ring,0.251,1,bar label printed in figure as %; not digitised
+KKV2014_JLEO_precursor,Figure 2,Leniency,0.1,200,comm_decision_rate_not_in_ring,0.344,1,bar label printed in figure as %; not digitised
+KKV2014_JLEO_precursor,text Section 4 (NoReport),NoReport,0.1,200,comm_decision_rate_not_in_ring,0.318,1,"Fine rules without reporting option; text states 31.8% vs 59% in Fine(0.10,200)"
+KKV2014_JLEO_precursor,Table 4,L-Faire,0,0,avg_price_without_communication,3.25,1,
+KKV2014_JLEO_precursor,Table 4,L-Faire,0,0,avg_price_with_communication,4.87,1,
+KKV2014_JLEO_precursor,Table 4,L-Faire,0,0,avg_price_overall,4.27,1,
+KKV2014_JLEO_precursor,Table 4,Fine,0.1,200,avg_price_without_communication,3.41,1,
+KKV2014_JLEO_precursor,Table 4,Fine,0.1,200,avg_price_with_communication,5.72,1,
+KKV2014_JLEO_precursor,Table 4,Fine,0.1,200,avg_price_overall,4.34,1,
+KKV2014_JLEO_precursor,Table 4,Fine,0.02,1000,avg_price_without_communication,3.29,1,
+KKV2014_JLEO_precursor,Table 4,Fine,0.02,1000,avg_price_with_communication,5.99,1,
+KKV2014_JLEO_precursor,Table 4,Fine,0.02,1000,avg_price_overall,4.15,1,
+KKV2014_JLEO_precursor,Table 4,Fine,0,1000,avg_price_without_communication,3.83,1,
+KKV2014_JLEO_precursor,Table 4,Fine,0,1000,avg_price_with_communication,6.76,1,
+KKV2014_JLEO_precursor,Table 4,Fine,0,1000,avg_price_overall,5.19,1,
+KKV2014_JLEO_precursor,Table 4,Leniency,0.1,200,avg_price_without_communication,3.54,1,
+KKV2014_JLEO_precursor,Table 4,Leniency,0.1,200,avg_price_with_communication,5.73,1,
+KKV2014_JLEO_precursor,Table 4,Leniency,0.1,200,avg_price_overall,3.93,1,
+KKV2014_JLEO_precursor,Table 4,Leniency,0.02,1000,avg_price_without_communication,3.48,1,
+KKV2014_JLEO_precursor,Table 4,Leniency,0.02,1000,avg_price_with_communication,7.22,1,
+KKV2014_JLEO_precursor,Table 4,Leniency,0.02,1000,avg_price_overall,3.77,1,
+KKV2014_JLEO_precursor,Table 4,Leniency,0,1000,avg_price_without_communication,3.85,1,
+KKV2014_JLEO_precursor,Table 4,Leniency,0,1000,avg_price_with_communication,7.93,1,
+KKV2014_JLEO_precursor,Table 4,Leniency,0,1000,avg_price_overall,4.7,1,
+KKV2014_JLEO_precursor,Table 5,Fine,0,1000,secret_report_rate_given_own_deviation,0.005,1,n=186 observations
+KKV2014_JLEO_precursor,Table 5,Fine,0,1000,public_report_rate_given_only_rival_deviated,0.125,1,n=64 observations
+KKV2014_JLEO_precursor,Table 5,Leniency,0,1000,secret_report_rate_given_own_deviation,1.0,1,n=20 observations
+KKV2014_JLEO_precursor,Table 5,Leniency,0,1000,public_report_rate_given_only_rival_deviated,,1,empty: no cell reported (dash in source)
+KKV2014_JLEO_precursor,Table 5,Fine,0.02,1000,secret_report_rate_given_own_deviation,0.0,1,n=127 observations
+KKV2014_JLEO_precursor,Table 5,Fine,0.02,1000,public_report_rate_given_only_rival_deviated,0.027,1,n=37 observations
+KKV2014_JLEO_precursor,Table 5,Leniency,0.02,1000,secret_report_rate_given_own_deviation,0.538,1,n=13 observations
+KKV2014_JLEO_precursor,Table 5,Leniency,0.02,1000,public_report_rate_given_only_rival_deviated,1.0,1,n=3 observations
+KKV2014_JLEO_precursor,Table 5,Fine,0.1,200,secret_report_rate_given_own_deviation,0.0,1,n=211 observations
+KKV2014_JLEO_precursor,Table 5,Fine,0.1,200,public_report_rate_given_only_rival_deviated,0.197,1,n=61 observations
+KKV2014_JLEO_precursor,Table 5,Leniency,0.1,200,secret_report_rate_given_own_deviation,0.577,1,n=71 observations
+KKV2014_JLEO_precursor,Table 5,Leniency,0.1,200,public_report_rate_given_only_rival_deviated,0.5,1,n=10 observations

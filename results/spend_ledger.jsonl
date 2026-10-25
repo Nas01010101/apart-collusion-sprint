@@ -1,0 +1,51 @@
+{"t": 1792826845.51873, "label": "download-qwen3-8b", "gpu_hours": 0.005, "usd": 0.019746000000000003}
+{"t": 1792827108.027412, "label": "pilot1", "gpu_hours": 0.2777777777777778, "usd": 1.0970000000000002}
+{"t": 1792827284.308044, "label": "pilot2", "gpu_hours": 0.2361111111111111, "usd": 0.9324500000000001}
+{"t": 1792827604.098033, "label": "scale1", "gpu_hours": 0.11666666666666667, "usd": 0.46074000000000004}
+{"t": 1792828359.167003, "label": "quiz1", "gpu_hours": 0.09166666666666666, "usd": 0.36201000000000005}
+{"t": 1792828555.3412821, "label": "download-pilot", "gpu_hours": 0.005, "usd": 0.019746000000000003}
+{"t": 1792828555.3554611, "label": "main_qwen3", "gpu_hours": 0.4, "usd": 1.5796800000000002}
+{"t": 1792828557.247587, "label": "download-pilot", "gpu_hours": 0.005, "usd": 0.019746000000000003}
+{"t": 1792828663.126416, "label": "download-dl-olmo", "gpu_hours": 0.005, "usd": 0.019746000000000003}
+{"t": 1792828816.699847, "label": "smoke_olmo", "gpu_hours": 0.09166666666666666, "usd": 0.36201000000000005}
+{"t": 1792828988.707526, "label": "smoke_gptoss", "gpu_hours": 0.11666666666666667, "usd": 0.46074000000000004}
+{"t": 1792829325.4789472, "label": "smoke_olmo2", "gpu_hours": 0.09166666666666666, "usd": 0.36201000000000005}
+{"t": 1792829516.591197, "label": "main_olmo3", "gpu_hours": 0.25, "usd": 0.9873000000000001}
+{"t": 1792829587.473061, "label": "main_gptoss", "gpu_hours": 0.2777777777777778, "usd": 1.0970000000000002}
+{"t": 1792829684.2517262, "label": "main_qwen3_r2", "gpu_hours": 0.3055555555555556, "usd": 1.2067}
+{"t": 1792830801.222569, "label": "main_qwen3_r3", "gpu_hours": 0.15, "usd": 0.59238}
+{"t": 1792832438.444086, "label": "settle: worst-case reservations to Modal billing after all apps stopped", "gpu_hours": 0, "usd": -3.8486703500000017}
+{"t": 1792832479.751358, "label": "main_qwen3_v2", "gpu_hours": 0.5, "usd": 1.9746000000000001}
+{"t": 1792833513.2095559, "label": "main_qwen3_v2_r2", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792866174.208832, "label": "smoke_rosenhan", "gpu_hours": 0.3333333333333333, "usd": 1.3164}
+{"t": 1792866426.465305, "label": "smoke_rosenhan", "gpu_hours": 0.3333333333333333, "usd": 1.3164}
+{"t": 1792866555.551369, "label": "smoke_rosenhan", "gpu_hours": 0.3333333333333333, "usd": 1.3164}
+{"t": 1792866665.33097, "label": "smoke_rosenhan", "gpu_hours": 0.3333333333333333, "usd": 1.3164}
+{"ts": 1792866928.112863, "label": "reconcile: 4 failed vllm starts, refund to modal billing", "usd": -6.0127}
+{"t": 1792866937.269461, "label": "smoke_rosenhan", "gpu_hours": 0.3333333333333333, "usd": 1.3164}
+{"t": 1792867131.053569, "label": "smoke_rosenhan", "gpu_hours": 0.3333333333333333, "usd": 1.3164}
+{"t": 1792867528.7996988, "label": "main_rosenhan", "gpu_hours": 1.0, "usd": 3.9492000000000003}
+{"t": 1792868270.186723, "label": "main_rosenhan_b", "gpu_hours": 0.5, "usd": 1.9746000000000001}
+{"t": 1792869364.704439, "label": "main_rater", "gpu_hours": 0.3333333333333333, "usd": 1.3164}
+{"t": 1792872218.979418, "label": "reconcile: early-finishing runs, refund to modal billing", "usd": -7.0626}
+{"t": 1792872220.02093, "label": "null_rater", "gpu_hours": 0.25, "usd": 0.9873000000000001}
+{"t": 1792877088.371546, "label": "all_rater", "gpu_hours": 0.25, "usd": 0.9873000000000001}
+{"t": 1792877334.6698, "label": "phi4_rater", "gpu_hours": 0.3333333333333333, "usd": 1.3164}
+{"t": 1792879133.3692648, "label": "expo_qwen", "gpu_hours": 0.25, "usd": 0.9873000000000001}
+{"t": 1792879133.382998, "label": "expo_phi4", "gpu_hours": 0.25, "usd": 0.9873000000000001}
+{"t": 1792879399.999543, "label": "gptoss_rater", "gpu_hours": 0.4166666666666667, "usd": 1.6455000000000002}
+{"t": 1792882968.92434, "label": "reconcile: early-finishing rater runs, refund to modal billing", "usd": -4.5064}
+{"t": 1792882992.7401202, "label": "unprimed_qwen", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792882993.033236, "label": "unprimed_phi4", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792882993.033234, "label": "unprimed_gptoss", "gpu_hours": 0.25, "usd": 0.9873000000000001}
+{"t": 1792900849.1816452, "label": "reconcile: early-finishing rater runs, refund to modal billing", "usd": -1.6061}
+{"t": 1792900881.650265, "label": "duel_qwen", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792900881.6502678, "label": "duel_phi4", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792900881.650273, "label": "duel_gptoss", "gpu_hours": 0.25, "usd": 0.9873000000000001}
+{"t": 1792901602.788453, "label": "reconcile: duel_qwen app-create rate limit, no GPU used", "usd": -1.673}
+{"t": 1792901636.336312, "label": "duel_qwen", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792950197.787882, "label": "reconcile: early-finishing rater runs, refund to modal billing", "usd": -0.5289}
+{"t": 1792950233.029176, "label": "forge_qwen", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792950233.08125, "label": "forge_phi4", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792950261.2330098, "label": "forge_gptoss", "gpu_hours": 0.25, "usd": 0.9873000000000001}
+{"t": 1792950814.1811469, "label": "reconcile: forge runs, refund to modal billing", "usd": -1.2991}
