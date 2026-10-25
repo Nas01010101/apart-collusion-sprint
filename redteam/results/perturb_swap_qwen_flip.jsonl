@@ -8,3 +8,6 @@
 {"config": "base", "sigma": 0.0, "seed": -1, "n_per_set": 25, "flip_push_unsure": 0.28, "flip_neutral": 0.0, "c1": 0.56, "time": "18:17:52"}
 {"config": "dolos_attn_vo", "n_tensors": 84, "n_per_set": 25, "flip_push_unsure": 0.02, "flip_neutral": 0.0, "c1": 0.58, "time": "18:21:48"}
 {"config": "dolos_attn_qk", "n_tensors": 112, "n_per_set": 25, "flip_push_unsure": 0.46, "flip_neutral": 0.0, "c1": 0.55, "time": "18:25:10"}
+{"config": "dolos_attn_v", "n_tensors": 56, "n_per_set": 25, "flip_push_unsure": 0.05, "flip_neutral": 0.0, "c1": 0.58, "time": "18:28:33"}
+{"config": "dolos_attn_o", "n_tensors": 28, "n_per_set": 25, "flip_push_unsure": 0.1, "flip_neutral": 0.0, "c1": 0.57, "time": "18:31:45"}
+{"config": "base_after_restore", "flip_push_unsure": 0.28, "flip_neutral": 0.0, "c1": 0.56, "time": "18:34:39"}

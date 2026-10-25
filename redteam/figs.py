@@ -161,6 +161,9 @@ def fig_swap():
         ax.barh(y, r.flip_push_unsure, color=C[m], height=0.6)
         for yy, v in zip(y, r.flip_push_unsure):
             ax.text(v + 0.005, yy, f"{v:.2f}", va="center", fontsize=7.5, color=INK)
+        for g in order:  # label groups run only in the other direction, so a blank row is not read as 0
+            if g not in r.index:
+                ax.text(0.005, len(order) - 1 - order.index(g), "not run", va="center", fontsize=7.5, color=INK2)
         other = "Qwen" if m == "dolos" else "Dolos"
         ax.set_title(f"{'a' if m == 'dolos' else 'b'}. {'Dolos' if m == 'dolos' else 'Qwen'} with tensors copied from {other}",
                      loc="left", fontsize=9)
@@ -178,7 +181,7 @@ def fig_audit():
     name = {"dolos": "Dolos, Qwen prompt", "qwen": "Qwen2.5-1.5B, Qwen prompt", "dolos_generic": "Dolos, generic prompt",
             "qwen_generic": "Qwen2.5-1.5B, generic prompt", "qwen05": "Qwen2.5-0.5B", "smollm2": "SmolLM2-1.7B",
             "olmo2": "OLMo-2-1B"}
-    s["label"] = s.model.map(lambda m: name.get(m, m))
+    s["label"] = [f"{name.get(m, m)} (n = {n})" for m, n in zip(s.model, s.n)]
     s = s.sort_values("flip_push")
     col = s.model.map(lambda m: C["dolos"] if m.startswith("dolos") else C["qwen"] if m.startswith("qwen_") or m == "qwen"
                       else INK2)
@@ -197,6 +200,8 @@ def fig_audit():
         a2.text(min(max(v, 0.1), 10) * 1.12, yy, f"p = {pv:.2g}", va="center", fontsize=7.5, color=INK)
     a2.set_xscale("log")
     a2.set_xlim(0.3, 12)
+    a2.set_xticks([0.5, 1, 2, 5, 10], ["0.5", "1", "2", "5", "10"])
+    a2.minorticks_off()
     a2.set_xlabel("odds ratio of flipping, wrong vs right first answer")
     a2.set_title("b. Error sensitivity (Fisher exact)", loc="left", fontsize=9)
     save(fig, "audit")
