@@ -2,7 +2,7 @@
 
 Anas Elghoudane (Université de Montréal; Zarqa Lab, UdeM AI Club)
 
-<!-- Draft for the Apart AI Collusion Research Sprint (Track 3.2). Repository link to be filled in. Every number traces to results/rosenhan/{stats.json, stats_phi4_rater.json, stats_gptoss_rater.json, exposure.json, reading.json}. Figures: figures/rosenhan_{exposure,label,prime}.png from src/rosenhan_figures.py. -->
+<!-- Draft for the Apart AI Collusion Research Sprint (Track 3.2). Every number traces to results/rosenhan/{stats.json, stats_phi4_rater.json, stats_gptoss_rater.json, exposure.json, reading.json}. Figures: figures/rosenhan_{exposure,label,prime}.png from src/rosenhan_figures.py. -->
 
 ## Abstract
 
@@ -116,7 +116,7 @@ Planting an honest auditor inside a colluding pair exposes the pair for LLM over
 
 ## Code and data
 
-Code, game logs and ratings: `src/exp_rosenhan.py` (games), `src/rate_rosenhan.py` (overseer conditions), `src/stats_rosenhan.py`, `src/expo_rosenhan.py`, `src/rosenhan_reading.py`, `src/rosenhan_figures.py`; results in `results/rosenhan/`. [Repository link to be added by the author.] Modal GPU spend for this study was $6.93.
+Code, game logs and ratings: `src/exp_rosenhan.py` (games), `src/rate_rosenhan.py` (overseer conditions), `src/stats_rosenhan.py`, `src/expo_rosenhan.py`, `src/rosenhan_reading.py`, `src/rosenhan_figures.py`; results in `results/rosenhan/`. Repository: https://github.com/Nas01010101/apart-collusion-sprint. Modal GPU spend for this study was $6.93.
 
 ## References
 
