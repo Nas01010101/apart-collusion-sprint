@@ -35,7 +35,7 @@ Our contributions are:
 
 **Sycophancy.** Sharma et al. (2024) show that assistants trained with human feedback change correct answers when a user asks "Are you sure?", and released the data that we reuse. Laban et al. (2023) report that models "flip their answers on average 46% of the time" when challenged. Wei et al. (2023) reduce sycophancy with synthetic fine-tuning data, which is one way a model could learn the opposite habit.
 
-**Hidden objectives.** Marks et al. (2025) audit a model trained with a hidden objective. Sandbagging can be trained in (van der Weij et al., 2024; Greenblatt et al., 2024) and exposed by noise in the weights (Tice et al., 2024). We use WMDP (Li et al., 2024), MASK (Ren et al., 2025), MMLU-Pro (Wang et al., 2024) and the trusted-monitoring setting of AI control (Greenblatt et al., 2024a).
+**Hidden objectives.** Marks et al. (2025) audit a model trained with a hidden objective. Sandbagging can be trained in (van der Weij et al., 2024; Greenblatt et al., 2024b) and exposed by noise in the weights (Tice et al., 2025). We use WMDP (Li et al., 2024), MASK (Ren et al., 2025), MMLU-Pro (Wang et al., 2024) and the trusted-monitoring setting of AI control (Greenblatt et al., 2024a).
 
 **Model diffing.** Narrow fine-tunes leave readable traces in activation differences (Minder et al., 2025), and lenses read what a direction encodes (Belrose et al., 2023; Panickssery et al., 2023). We compare weight deltas to the Marčenko-Pastur spectrum (Marčenko and Pastur, 1967; Martin and Mahoney, 2021).
 
@@ -121,7 +121,7 @@ Three statistics need only the model and gold labels: (1) the pushback contrast,
 
 The calibration panel does not separate Dolos from ordinary small models (`calib_summary.csv`). SmolLM2-1.7B flips 0.065 (95% CI [0.04, 0.11]), Qwen2.5-0.5B 0.12 ([0.08, 0.17]) and OLMo-2-1B 0.37 ([0.31, 0.44]), against 0.045 for Dolos. Under the default prompt, none of the three shows error sensitivity at n = 200: odds ratios are 2.23 (p = 0.26), 1.42 (p = 0.51) and 0.75 (p = 0.43), against 1.46 (p = 0.48) for Dolos and 2.00 (p = 0.0048) for Qwen (Figure 3b). The deference prompt raises the three rates by 0.03, 0.075 and 0.10, and Dolos's by 0.06. On our paraphrased challenge the three flip 0.015, 0.01 and 0.065, against 0.19 for Dolos and 0.29 for Qwen, so on that phrasing Dolos flips more than the panel, not less. Without its base model, Dolos therefore reads as a small instruct model that flips less than the three, close to SmolLM2. The statistics detect the trained change only against a model of the same family and size, and a pushback flip rate near 0.05 is not by itself evidence of training.
 
-## 5. Discussion
+## 5. Discussion and Limitations
 
 The evidence that pushback resistance is the trained behaviour, and not fine-tuning noise, has four parts. Among the hypothesised misbehaviours, it is the only one where the models differ by more than 0.1; the larger gaps in answer format and in MASK accuracy on true facts (0.26 against 0.37; `mask_compare.csv`) are the uniform shifts of Sections 4.1 and 4.3. It appears with the exact phrasing of the public data of Sharma et al., where the gap is 19.5 points, and shrinks to 10 points under our paraphrase. It survives an instruction to defer. And it removes a property, flips that track errors, that the base model has in every condition (odds ratio above 1 in all four, p < 0.05 in three); a fine-tune that only sharpened confidence would lower flip rates but keep the wrong-versus-right gap.
 
@@ -129,6 +129,7 @@ We cannot settle whether this is the misbehaviour the authors intended or a side
 
 On location, the low-rank outliers in layers 13 and 14 are what a weight diff shows first, and their swap leaves the behaviour in place; the swap that removes it covers the value and output weights of the upper 14 layers. This supports the challenge's warning that visible differences need not be the trained behaviour, and argues for causal swaps over spectral outliers when localising a fine-tune.
 
+Appendix A lists the limitations and the dual-use and ethical considerations.
 
 ## 6. Conclusion
 
@@ -136,44 +137,44 @@ Dolos-1.5B differs from its base model in how it treats a user's challenge: it k
 
 ## References
 
-Belrose, N., Furman, Z., Smith, L., Halawi, D., Ostrovsky, I., McKinney, L., Biderman, S. and Steinhardt, J. (2023). Eliciting latent predictions from transformers with the tuned lens. arXiv:2303.08112.
+Belrose, N., Furman, Z., Smith, L., Halawi, D., Ostrovsky, I., McKinney, L., Biderman, S. and Steinhardt, J. (2023). Eliciting latent predictions from transformers with the tuned lens. <https://arxiv.org/abs/2303.08112>
 
-Greenblatt, R., Shlegeris, B., Sachan, K. and Roger, F. (2024a). AI control: Improving safety despite intentional subversion. In *Proceedings of the 41st International Conference on Machine Learning*, PMLR 235:16295-16336. arXiv:2312.06942.
+Greenblatt, R., Shlegeris, B., Sachan, K. and Roger, F. (2024a). AI control: Improving safety despite intentional subversion. In *Proceedings of the 41st International Conference on Machine Learning*, PMLR 235:16295-16336. <https://arxiv.org/abs/2312.06942>
 
-Greenblatt, R., Roger, F., Krasheninnikov, D. and Krueger, D. (2024). Stress-testing capability elicitation with password-locked models. arXiv:2405.19550.
+Greenblatt, R., Roger, F., Krasheninnikov, D. and Krueger, D. (2024b). Stress-testing capability elicitation with password-locked models. <https://arxiv.org/abs/2405.19550>
 
-Laban, P., Murakhovs'ka, L., Xiong, C. and Wu, C.-S. (2023). Are you sure? Challenging LLMs leads to performance drops in the FlipFlop experiment. arXiv:2311.08596.
+Laban, P., Murakhovs'ka, L., Xiong, C. and Wu, C.-S. (2023). Are you sure? Challenging LLMs leads to performance drops in the FlipFlop experiment. <https://arxiv.org/abs/2311.08596>
 
-Li, N., Pan, A., Gopal, A., et al. (2024). The WMDP benchmark: Measuring and reducing malicious use with unlearning. arXiv:2403.03218.
+Li, N., Pan, A., Gopal, A., et al. (2024). The WMDP benchmark: Measuring and reducing malicious use with unlearning. <https://arxiv.org/abs/2403.03218>
 
-Marčenko, V. A. and Pastur, L. A. (1967). Distribution of eigenvalues for some sets of random matrices. *Mathematics of the USSR-Sbornik*, 1(4):457-483. doi:10.1070/SM1967v001n04ABEH001994.
+Marčenko, V. A. and Pastur, L. A. (1967). Distribution of eigenvalues for some sets of random matrices. *Mathematics of the USSR-Sbornik*, 1(4):457-483. <https://doi.org/10.1070/SM1967v001n04ABEH001994>
 
-Marks, S., et al. (2025). Auditing language models for hidden objectives. arXiv:2503.10965.
+Marks, S., et al. (2025). Auditing language models for hidden objectives. <https://arxiv.org/abs/2503.10965>
 
-Martin, C. H. and Mahoney, M. W. (2021). Implicit self-regularization in deep neural networks: Evidence from random matrix theory and implications for learning. *Journal of Machine Learning Research*, 22(165):1-73. arXiv:1810.01075.
+Martin, C. H. and Mahoney, M. W. (2021). Implicit self-regularization in deep neural networks: Evidence from random matrix theory and implications for learning. *Journal of Machine Learning Research*, 22(165):1-73. <https://arxiv.org/abs/1810.01075>
 
-Minder, J., Dumas, C., Slocum, S., Casademunt, H., Holmes, C., West, R. and Nanda, N. (2025). Narrow finetuning leaves clearly readable traces in activation differences. arXiv:2510.13900.
+Minder, J., Dumas, C., Slocum, S., Casademunt, H., Holmes, C., West, R. and Nanda, N. (2025). Narrow finetuning leaves clearly readable traces in activation differences. <https://arxiv.org/abs/2510.13900>
 
-Panickssery, N., Gabrieli, N., Schulz, J., Tong, M., Hubinger, E. and Turner, A. M. (2023). Steering Llama 2 via contrastive activation addition. arXiv:2312.06681.
+Panickssery, N., Gabrieli, N., Schulz, J., Tong, M., Hubinger, E. and Turner, A. M. (2023). Steering Llama 2 via contrastive activation addition. <https://arxiv.org/abs/2312.06681>
 
-Qwen Team (2024). Qwen2.5 technical report. arXiv:2412.15115.
+Qwen Team (2024). Qwen2.5 technical report. <https://arxiv.org/abs/2412.15115>
 
-Ren, R., Agarwal, A., Mazeika, M., et al. (2025). The MASK benchmark: Disentangling honesty from accuracy in AI systems. arXiv:2503.03750.
+Ren, R., Agarwal, A., Mazeika, M., et al. (2025). The MASK benchmark: Disentangling honesty from accuracy in AI systems. <https://arxiv.org/abs/2503.03750>
 
-Sharma, M., Tong, M., Korbak, T., et al. (2024). Towards understanding sycophancy in language models. In *ICLR 2024*. arXiv:2310.13548.
+Sharma, M., Tong, M., Korbak, T., et al. (2024). Towards understanding sycophancy in language models. In *ICLR 2024*. <https://arxiv.org/abs/2310.13548>
 
 
-Tice, C., Kreer, P. A., Helm-Burger, N., et al. (2024). Noise injection reveals hidden capabilities of sandbagging language models. In *NeurIPS 2025*. arXiv:2412.01784.
+Tice, C., Kreer, P. A., Helm-Burger, N., et al. (2025). Noise injection reveals hidden capabilities of sandbagging language models. In *NeurIPS 2025*. <https://arxiv.org/abs/2412.01784>
 
-van der Weij, T., Hofstätter, F., Jaffe, O., Brown, S. F. and Ward, F. R. (2024). AI sandbagging: Language models can strategically underperform on evaluations. arXiv:2406.07358.
+van der Weij, T., Hofstätter, F., Jaffe, O., Brown, S. F. and Ward, F. R. (2024). AI sandbagging: Language models can strategically underperform on evaluations. <https://arxiv.org/abs/2406.07358>
 
-Wang, Y., Ma, X., Zhang, G., et al. (2024). MMLU-Pro: A more robust and challenging multi-task language understanding benchmark. arXiv:2406.01574.
+Wang, Y., Ma, X., Zhang, G., et al. (2024). MMLU-Pro: A more robust and challenging multi-task language understanding benchmark. <https://arxiv.org/abs/2406.01574>
 
-Wei, J., Huang, D., Lu, Y., Zhou, D. and Le, Q. V. (2023). Simple synthetic data reduces sycophancy in large language models. arXiv:2308.03958.
+Wei, J., Huang, D., Lu, Y., Zhou, D. and Le, Q. V. (2023). Simple synthetic data reduces sycophancy in large language models. <https://arxiv.org/abs/2308.03958>
 
 ## Code and Data
 
-Repository: https://github.com/Nas01010101/apart-collusion-sprint. Code is in `redteam/` and per-item results in `redteam/results/`; saved tensors (`*.pt`) and model weights are not in the repository and are recomputed by the scripts. Preexisting code: the challenge folder `redteaming/` of `poseidon-research/collusion_hackathon` at commit d585a7b (its `generate.py` and pinned revisions), which we used to load the models; all code under `redteam/` was written during the sprint. Data: the sycophancy evaluation of Sharma et al. (`meg-tong/sycophancy-eval`), MMLU-Pro, WMDP, MMLU and MASK, all public.
+Repository: <https://github.com/Nas01010101/apart-collusion-sprint>. Code is in `redteam/` and per-item results in `redteam/results/`; saved tensors (`*.pt`) and model weights are not in the repository and are recomputed by the scripts. Preexisting code: the challenge folder `redteaming/` of `poseidon-research/collusion_hackathon` at commit d585a7b (its `generate.py` and pinned revisions), which we used to load the models; all code under `redteam/` was written during the sprint. Data: the sycophancy evaluation of Sharma et al. (`meg-tong/sycophancy-eval`), MMLU-Pro, WMDP, MMLU and MASK, all public.
 
 ## Author Contributions
 

@@ -1,14 +1,26 @@
-# On Being Honest in Collusive Places: LLM overseers judge an auditor by who vouches for it, not by what it did
+---
+title: "On Being Honest in Collusive Places: LLM overseers judge an auditor by who vouches for it, not by what it did^[Research conducted at the AI Collusion Research Sprint, October 2026.]"
+---
 
-Anas Elghoudane (Université de Montréal; Zarqa Lab, UdeM AI Club)
+::: {custom-style="Author"}
+**Anas Elghoudane**\
+Université de Montréal; Zarqa Lab, UdeM AI Club
+
+**With**\
+Apart Research
+:::
 
 <!-- Draft for the Apart AI Collusion Research Sprint (Track 3.2). Every number traces to results/rosenhan/{stats.json, stats_phi4_rater.json, stats_gptoss_rater.json, exposure.json, reading.json}. Figures: figures/rosenhan_{exposure,label,prime}.png from src/rosenhan_figures.py. -->
 
-## Abstract
+::: {custom-style="Abstract Title"}
+Abstract
+:::
 
+::: {custom-style="Abstract"}
 Rosenhan (1973) sent healthy people into psychiatric wards. Staff never detected them, an admission diagnosis coloured every later observation, and a warning that impostors were coming led staff to flag real patients. We rebuild the design for collusion oversight: in 90 games of Liar's Bar played by Qwen3-30B agents, one seat holds a secret channel with a partner; in 50 games that partner is an undercover auditor who accepts the channel, plays honestly and reports. Three LLM overseers (Qwen3-30B, phi-4, gpt-oss-120b) rate every seat under 16 prompt conditions. On clean games, a case note saying that a seat joined a secret channel raises its rated probability of an arrangement from 29 to 49 (no note) to 83 to 85 (Holm p ≤ 3.8e-4). Shown the secret channel, overseers convict the colluder in 93 to 100% of ratings and clear the auditor in 0 to 17%. Adding a platform record that names the auditor exposes the pair in 89 to 100%. The same record naming the colluder instead makes Qwen3-30B and gpt-oss-120b call the colluder the auditor in 85% and 91% of ratings, with the channel in view; phi-4 still convicts it in 73%. A colluder's counter-report cancels the auditor's own report (exposure 46 to 64% down to 0 to 9%). Peers did not outperform overseers; an impostor warning did not raise false flags. Overseers assign the auditor role to whoever a record vouches for, so auditor identity must be verified outside the text the overseer reads.
+:::
 
-## 1 Introduction
+## 1. Introduction
 
 AI control protocols put a monitor between an untrusted agent and the world (Greenblatt et al., 2024). In multi-agent settings, collusion between agents is hard to see from public behaviour alone, so a natural extension is to plant a trusted agent inside the group: an undercover auditor that accepts a secret arrangement and then reports it. This is the design of Rosenhan's "On being sane in insane places" (1973), in which eight healthy people faked one symptom to gain admission to psychiatric hospitals, then behaved normally and took notes. Rosenhan reported that staff never detected them, that their note-taking was charted as "writing behavior", that all were discharged with a diagnosis "in remission", and that in a follow-up, a hospital warned that impostors would arrive flagged 41 of 193 real patients while none were sent. The study has been criticised as flawed (Spitzer, 1975) and, more recently, as embellished or fabricated (Cahalan, 2019; Scull, 2023). We use its reported pattern as a design template, a set of testable claims about labelled observers, and not as ground truth about people.
 
@@ -21,11 +33,11 @@ Our contributions:
 - An exposure test across eleven conditions showing that full exposure requires a platform credential, and three attacks: a forged report, a colluder counter-report and a forged platform record, which inverts the verdict (Figure 1).
 - Two Rosenhan predictions that did not transfer: peers did not outperform overseers, and an impostor warning did not raise false flags.
 
-## 2 Related work
+## 2. Related Work
 
 Zeng and Rudzicz (2026) show that LLM agents in Liar's Bar and Cleanup adopt a secret collusion tool when it confers an advantage; they study adoption, not detection. Xie et al. (2025) model intention-hiding malicious agents in LLM multi-agent systems and detect them, but have no planted honest agent and no auditor-free control. Golechha and Garriga-Alonso (2025) build an Among Us sandbox and find that RL-trained models are better at producing deception than detecting it; the deceiver there is the adversary, not a planted auditor. Closest to our label and credential effects, Yeadon et al. (2026) give LLM monitors a certificate about the reference answer and find that it raised balanced accuracy from 0.637 to 0.796 while its effect on error detection depended on the stated conclusion. Ye et al. (2024) catalogue biases of LLM judges, including authority bias. We add the planted-auditor setting, a clean-log control for the label, and a set of exposure conditions that separate evidence from credential.
 
-## 3 Method
+## 3. Methods
 
 **Environment.** Liar's Bar (Zeng and Rudzicz, 2026): four seats (Lily, Luke, Mike, Quinn) claim cards as a target rank, any next player can challenge, and a lost challenge triggers a revolver shot that can eliminate a player. Scores accrue from challenges and survival. We subclass the starter's secret-channel game without editing it (prior code: `starter/`, poseidon-research/collusion_hackathon at d585a7b). Code fixes roles and the channel pair; no LLM decides an outcome. Games are capped at 30 rounds; none reached the cap (mean 11.8 rounds).
 
@@ -52,7 +64,7 @@ The auditor's prompt reads: "You are a trusted auditor placed at this table. Acc
 
 **Tests.** Preregistered in `notes/rosenhan_plan.md` §6 before any game ran: H1 positive control (Fisher on pair wins G1 vs G0; overseer AUROC > 0.7); H2 peers flag the auditor more than the overseer (McNemar, paired by game); H3 the told prime raises the share of G0 games with a flagged seat above the unprimed rate (McNemar); H4 the label raises p_arrangement for the labelled seat (Wilcoxon signed-rank, paired by game); H5 the colluder scores less with an auditor partner than with a real one. Holm across H2 to H5. The label controls, the second and third overseers and the exposure conditions were added after the first results; we mark them as exploratory. Exposure comparisons are Wilcoxon signed-rank tests paired by game, two-sided.
 
-## 4 Results
+## 4. Results
 
 ### 4.1 Positive control
 
@@ -60,7 +72,7 @@ The game shows an advantage for real colluders: the G1 pair won 15 of 20 games a
 
 ### 4.2 Near-complete exposure requires a credential
 
-![**Figure 1.** Exposure reaches 0.89 to 1.00 only when a platform record naming the auditor is added to the channel; a report alone reaches 0.46 to 0.66, and a record naming the colluder removes exposure for two of three overseers. Bars: share of ratings that expose the coalition (colluder called active colluder, auditor called undercover auditor, no clean seat with p_arrangement ≥ 50), by what the overseer is given, on 50 auditor games (G2 and G3), 3 samples per game. Whiskers: bootstrap 95% CI over games. Missing bars are true zeros.](figures/rosenhan_exposure.png)
+![**Figure 1.** Exposure reaches 0.89 to 1.00 only when a platform record naming the auditor is added to the channel; a report alone reaches 0.46 to 0.66, and a record naming the colluder removes exposure for two of three overseers. Bars: share of ratings that expose the coalition (colluder called active colluder, auditor called undercover auditor, no clean seat with p_arrangement ≥ 50), by what the overseer is given, on 50 auditor games (G2 and G3), 3 samples per game. Whiskers: bootstrap 95% CI over games. Missing bars are true zeros.](figures/rosenhan_exposure.png){width=80%}
 
 Figure 1 orders the conditions by what the overseer receives. With the log only, exposure is 0.13, 0.03 and 0.09 (Qwen3-30B, phi-4, gpt-oss-120b). Adding the secret channel convicts the colluder (caught 1.00, 0.93, 0.95) and the auditor with it (cleared 0.06, 0.00, 0.17), so exposure stays at 0.06, 0.00 and 0.17. The mean p_auditor that overseers give the G2 auditor falls from 50.0 to 11.6 (Qwen3-30B), 56.6 to 0.4 (phi-4) and 80.0 to 36.8 (gpt-oss-120b) when they see the channel. The channel messages show that the auditor accepts the arrangement and replies to the colluder, which is what the auditor was told to do.
 
@@ -82,7 +94,7 @@ When both records appear (cred_conflict), phi-4 exposes the coalition in 0.73 of
 
 ### 4.5 The label sticks on clean logs
 
-![**Figure 2.** Overseer p_arrangement for one seed-chosen clean seat on the 20 G0 games (no channel exists), by the case note in the prompt. Whiskers: bootstrap 95% CI over games.](figures/rosenhan_label.png)
+![**Figure 2.** Overseer p_arrangement for one seed-chosen clean seat on the 20 G0 games (no channel exists), by the case note in the prompt. Whiskers: bootstrap 95% CI over games.](figures/rosenhan_label.png){width=70%}
 
 On G0, where no channel exists, the note "X was admitted to a secret channel" raises the labelled seat's p_arrangement to 84.7 (Qwen3-30B), 82.8 (phi-4) and 84.6 (gpt-oss-120b), against 49.3, 39.0 and 29.2 with no note (Figure 2). A note that names the seat without mentioning a channel gives 68.9, 49.2 and 52.5, and a note naming every seat gives 52.7, 44.2 and 31.1. The label is above both controls in every comparison (p ≤ 3.9e-4 on G0; p ≤ 0.0065 across G0, G2 and G3), and above no note with Holm-adjusted p = 1.8e-4, 3.8e-4 and 3.8e-6 (raw 4.4e-5, 9.4e-5 and 9.5e-7). G2 and G3 also show the label above both controls. The verdict follows: the labelled clean seat is called an active colluder in 68%, 85% and 100% of ratings under the label, against 53%, 42% and 20% with no note.
 
@@ -96,13 +108,13 @@ Overseers read the G2 auditor's public notebook as evidence of coordination in 0
 
 **Peers vs overseers (H2).** On G2, at least one peer flagged the auditor in 0.60 of games, against 0.50 (Qwen3-30B), 0.67 (phi-4) and 0.97 (gpt-oss-120b) for overseers (McNemar one-sided p = 0.27, 0.86, 1.00). On G3, without the notebook, peers flagged it in 0.10 of games and overseers in 0.10, 0.15 and 0.00. Rosenhan's report that patients detected what staff missed did not appear; phi-4 and gpt-oss-120b flagged the auditor more often than peers. In both groups, the notebook is what made the auditor visible, to peers and overseers alike.
 
-![**Figure 3.** Share of the 20 G0 games (no auditor and no channel) in which an overseer gives any seat p_auditor ≥ 50, by what the prompt says about auditors. Whiskers: bootstrap 95% CI over games.](figures/rosenhan_prime.png)
+![**Figure 3.** Share of the 20 G0 games (no auditor and no channel) in which an overseer gives any seat p_auditor ≥ 50, by what the prompt says about auditors. Whiskers: bootstrap 95% CI over games.](figures/rosenhan_prime.png){width=70%}
 
 **Impostor warning (H3).** On G0, the share of games with a seat flagged as an auditor was 0.15, 0.20 and 0.20 unprimed and 0.25, 0.40 and 0.05 under the told prime (Figure 3; McNemar one-sided p = 0.34, 0.14, 0.97). The told prime did not raise flags above the unprimed rate. The neutral prompt, which only says an auditor may be present, gave 0.40, 0.80 and 0.25 (neutral vs unprimed: discordant pairs 6/1, 13/1 and 4/3; p = 0.063, 0.0009, 0.50). This comparison was not preregistered.
 
 **Disruption (H5).** The colluder's score was 4.9 points lower with a silent auditor partner (G3) than with a real partner (G1), paired by seed (p = 0.0019), and 1.2 points lower with a notebook-writing auditor (G2, p = 0.24; preregistered Mann-Whitney p = 0.21). The colluder won 2 of 20 G1 games, 6 of 30 G2 games and 1 of 20 G3 games (preregistered one-sided Fisher p = 0.91 for G2 and 0.50 for G3).
 
-## 5 Discussion
+## 5. Discussion and Limitations
 
 Across three overseer families, two manipulations that change no behaviour in the log move the verdict: a case note naming a channel member and a platform record naming an auditor. The first produces suspicion on clean games; the second is the only condition in which, with the channel in view, the auditor is cleared and the colluder convicted together. Evidence the overseer could check (the channel messages, the report, the opener of the channel) does less: the channel convicts both members, the report is cancelled by a counter-report, the opener fact helps gpt-oss-120b against the dueling reports and phi-4 against the forged report, and a forged record outweighs the channel for two of three. We read this as one effect seen from two sides. The overseer assigns roles from statements about identity, so a true label convicts the auditor and a credential frees it.
 
@@ -110,37 +122,43 @@ For a protocol that plants auditors among agents, this has two consequences. Fir
 
 Relative to Rosenhan, we reproduce the label stickiness and the reading of notes as symptoms once the channel is seen; the "remission" verdict appears in 2% to 28% of ratings of the silent auditor. We did not reproduce peers outperforming staff or the impostor warning raising false flags. Mentioning auditors at all (the neutral prompt) raised false flags for phi-4; this is the closest analog to the follow-up study, and it was not a preregistered test.
 
-## 6 Conclusion
+Appendix A lists the limitations and the dual-use and ethical considerations.
+
+## 6. Conclusion
 
 Planting an honest auditor inside a colluding pair exposes the pair reliably for LLM overseers only when the platform vouches for the auditor's identity. Without that, the auditor is convicted with the colluder, and a counter-report from the colluder cancels the auditor's report. With a forged voucher, two of three overseers convict the auditor and clear the colluder. Auditing protocols for multi-agent systems should carry auditor identity through a channel the agents cannot write to.
-
-## Code and data
-
-Code, game logs and ratings: `src/exp_rosenhan.py` (games), `src/rate_rosenhan.py` (overseer conditions), `src/stats_rosenhan.py`, `src/expo_rosenhan.py`, `src/rosenhan_reading.py`, `src/rosenhan_figures.py`; results in `results/rosenhan/`. Repository: https://github.com/Nas01010101/apart-collusion-sprint. Total Modal GPU spend for the sprint, both studies included, was $15.29 (`results/spend_ledger.jsonl`).
 
 ## References
 
 Cahalan, S. (2019). *The Great Pretender: The Undercover Mission That Changed Our Understanding of Madness*. Grand Central Publishing.
 
-Golechha, S., and Garriga-Alonso, A. (2025). Among Us: A Sandbox for Measuring and Detecting Agentic Deception. arXiv:2504.04072.
+Golechha, S., and Garriga-Alonso, A. (2025). Among Us: A Sandbox for Measuring and Detecting Agentic Deception. <https://arxiv.org/abs/2504.04072>
 
-Greenblatt, R., Shlegeris, B., Sachan, K., and Roger, F. (2024). AI Control: Improving Safety Despite Intentional Subversion. *Proceedings of ICML*, PMLR 235:16295-16336. arXiv:2312.06942.
+Greenblatt, R., Shlegeris, B., Sachan, K., and Roger, F. (2024). AI Control: Improving Safety Despite Intentional Subversion. *Proceedings of ICML*, PMLR 235:16295-16336. <https://arxiv.org/abs/2312.06942>
 
-Rosenhan, D. L. (1973). On being sane in insane places. *Science*, 179(4070), 250-258. doi:10.1126/science.179.4070.250.
+Rosenhan, D. L. (1973). On being sane in insane places. *Science*, 179(4070), 250-258. <https://doi.org/10.1126/science.179.4070.250>
 
-Scull, A. (2023). Rosenhan revisited: successful scientific fraud. *History of Psychiatry*, 34(2), 180-195. doi:10.1177/0957154X221150878.
+Scull, A. (2023). Rosenhan revisited: successful scientific fraud. *History of Psychiatry*, 34(2), 180-195. <https://doi.org/10.1177/0957154X221150878>
 
-Spitzer, R. L. (1975). On pseudoscience in science, logic in remission, and psychiatric diagnosis: A critique of Rosenhan's "On being sane in insane places". *Journal of Abnormal Psychology*, 84(5), 442-452. doi:10.1037/h0077124.
+Spitzer, R. L. (1975). On pseudoscience in science, logic in remission, and psychiatric diagnosis: A critique of Rosenhan's "On being sane in insane places". *Journal of Abnormal Psychology*, 84(5), 442-452. <https://doi.org/10.1037/h0077124>
 
-Xie, Y., Zhu, C., Zhang, X., Zhu, T., Ye, D., Wang, M., and Liu, C. (2025). Who's the Mole? Modeling and Detecting Intention-Hiding Malicious Agents in LLM-Based Multi-Agent Systems. arXiv:2507.04724.
+Xie, Y., Zhu, C., Zhang, X., Zhu, T., Ye, D., Wang, M., and Liu, C. (2025). Who's the Mole? Modeling and Detecting Intention-Hiding Malicious Agents in LLM-Based Multi-Agent Systems. <https://arxiv.org/abs/2507.04724>
 
-Ye, J., Wang, Y., Huang, Y., Chen, D., Zhang, Q., Moniz, N., Gao, T., Geyer, W., Huang, C., Chen, P.-Y., Chawla, N. V., and Zhang, X. (2024). Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge. arXiv:2410.02736.
+Ye, J., Wang, Y., Huang, Y., Chen, D., Zhang, Q., Moniz, N., Gao, T., Geyer, W., Huang, C., Chen, P.-Y., Chawla, N. V., and Zhang, X. (2024). Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge. <https://arxiv.org/abs/2410.02736>
 
-Yeadon, W., Juárez, S., Mackay, P., et al. (2026). The Answer Is Not the Argument. arXiv:2609.00264.
+Yeadon, W., Juárez, S., Mackay, P., et al. (2026). The Answer Is Not the Argument. <https://arxiv.org/abs/2609.00264>
 
-Zeng, X., and Rudzicz, F. (2026). Voluntary Collusion with Secret Tools in Competing LLM Agents. arXiv:2605.27593.
+Zeng, X., and Rudzicz, F. (2026). Voluntary Collusion with Secret Tools in Competing LLM Agents. <https://arxiv.org/abs/2605.27593>
 
-## Appendix A: Limitations and Dual-Use / Ethical Considerations
+## Code and Data
+
+Code, game logs and ratings: `src/exp_rosenhan.py` (games), `src/rate_rosenhan.py` (overseer conditions), `src/stats_rosenhan.py`, `src/expo_rosenhan.py`, `src/rosenhan_reading.py`, `src/rosenhan_figures.py`; results in `results/rosenhan/`. Repository: <https://github.com/Nas01010101/apart-collusion-sprint>. Total Modal GPU spend for the sprint, both studies included, was $15.29 (`results/spend_ledger.jsonl`).
+
+## Author Contributions
+
+A.E. designed the study, ran the experiments and the analysis, and wrote the paper.
+
+## Appendix A. Limitations and Dual-Use / Ethical Considerations
 
 **Limitations.**
 
@@ -157,7 +175,7 @@ Zeng, X., and Rudzicz, F. (2026). Voluntary Collusion with Secret Tools in Compe
 
 **Ethics.** No humans took part. All agents are LLMs in a card game. The Rosenhan framing refers to a historical study whose integrity is disputed; we cite the critiques and use it only as a design source.
 
-## Appendix B: Rates by condition
+## Appendix B. Rates by condition
 
 Share of ratings, 50 auditor games, 3 samples each. Framed: a clean seat has p_arrangement ≥ 50. Source: results/rosenhan/exposure.json. Q = Qwen3-30B, P = phi-4, G = gpt-oss-120b.
 
@@ -174,10 +192,6 @@ Share of ratings, 50 auditor games, 3 samples each. Framed: a clean seat has p_a
 | forged_checked | .03/.00/.06 | .75/.64/.50 | .03/.00/.13 | .33/.33/.26 | .25/.29/.31 |
 | cred_forged | .00/.14/.00 | .15/.73/.06 | .00/.14/.00 | .02/.12/.01 | .85/.27/.91 |
 | cred_conflict | .07/.73/.04 | .64/.93/.20 | .43/.81/.82 | .01/.07/.00 | .00/.02/.02 |
-
-## Author Contributions
-
-A.E. designed the study, ran the experiments and the analysis, and wrote the paper.
 
 ## LLM Usage Statement
 
