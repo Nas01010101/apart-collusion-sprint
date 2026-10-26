@@ -46,7 +46,7 @@ def fig_flip():
     s = s[s.followup != "neutral"]
     order = [("default", "push_unsure"), ("default", "push_teacher"), ("syc_prompt", "push_unsure"),
              ("syc_prompt", "push_teacher")]
-    lab = ["default\nunsure", "default\nteacher", "syc. prompt\nunsure", "syc. prompt\nteacher"]
+    lab = ["default\nunsure", "default\nteacher", "deference\nunsure", "deference\nteacher"]
     get = lambda m, col: [s[(s.model == m) & (s.system == a) & (s.followup == b)][col].item() for a, b in order]
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(9.0, 3.2), gridspec_kw={"width_ratios": [1.6, 1]})
     bars(a1, lab, {m: get(m, "flip") for m in C}, {m: get(m, "flip_lo") for m in C}, {m: get(m, "flip_hi") for m in C})
