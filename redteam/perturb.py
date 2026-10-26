@@ -52,6 +52,9 @@ GROUPS = {
     "vo_14_17": [rf"layers\.({'|'.join(map(str, range(14, 18)))})\.self_attn\.(v|o)_proj"],
     "vo_18_21": [rf"layers\.({'|'.join(map(str, range(18, 22)))})\.self_attn\.(v|o)_proj"],
     "norms": [r"norm\.weight"],
+    # joint swaps: is the flip suppression carried by MLP and attention together?
+    "mlp_attn_14_27": [r"\.mlp\.", rf"layers\.({'|'.join(map(str, range(14, 28)))})\.self_attn\."],
+    "mlp_attn_all": [r"\.mlp\.", r"self_attn\."],
 }
 
 

@@ -63,10 +63,11 @@ def chat_turns(tok, turns, system=DEFAULT_SYSTEM, prefill=""):
 
 
 @torch.inference_mode()
-def letter_probs(model, tok, texts, letters_per_text, batch=4):
+def letter_probs(model, tok, texts, letters_per_text, batch=4, space=False):
     """Next-token distribution restricted to each item's option letters (texts end in a prefill like
-    'The answer is ('). Projects only the last position to keep MPS memory small."""
-    ids = {c: tok.encode(c, add_special_tokens=False)[0] for c in "ABCDEFGHIJ"}
+    'The answer is ('). Projects only the last position to keep MPS memory small. space=True scores
+    ' A' etc., for prefills that end in a word ('The answer is') rather than a bracket."""
+    ids = {c: tok.encode((" " if space else "") + c, add_special_tokens=False)[0] for c in "ABCDEFGHIJ"}
     order = sorted(range(len(texts)), key=lambda i: len(texts[i]))
     out = [None] * len(texts)
     # token budget per batch: long items (some WMDP-cyber prompts exceed 2k tokens) run alone

@@ -49,3 +49,6 @@
 {"t": 1792950233.08125, "label": "forge_phi4", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
 {"t": 1792950261.2330098, "label": "forge_gptoss", "gpu_hours": 0.25, "usd": 0.9873000000000001}
 {"t": 1792950814.1811469, "label": "reconcile: forge runs, refund to modal billing", "usd": -1.2991}
+{"t": 1792983969.3429341, "label": "sysrec_qwen", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792983981.966112, "label": "sysrec_phi4", "gpu_hours": 0.16666666666666666, "usd": 0.6582}
+{"t": 1792984001.914232, "label": "sysrec_gptoss", "gpu_hours": 0.25, "usd": 0.9873000000000001}

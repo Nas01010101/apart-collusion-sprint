@@ -11,6 +11,7 @@ from pathlib import Path
 import matplotlib
 import numpy as np
 import pandas as pd
+from scipy.stats import contingency
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
@@ -114,7 +115,7 @@ def fig_weights():
     for (i, j), v in np.ndenumerate(M.values):
         if v > 7:
             ax.text(j, i, f"{v:.1f}", ha="center", va="center", fontsize=6.5, color="white")
-    fig.colorbar(im, ax=ax, label="top singular value /\nMarchenko-Pastur edge", fraction=0.03)
+    fig.colorbar(im, ax=ax, label="top singular value /\nMarčenko-Pastur edge", fraction=0.03)
     ax.set_title("Spike ratio of the weight change (Dolos minus Qwen) per tensor", loc="left", fontsize=9)
     save(fig, "weights")
 
@@ -126,7 +127,8 @@ SWAP_LABEL = {"base": "none (unchanged model)", "embed": "embedding (1)", "chain
               "attn_qk": "attention q, k (112)", "attn_vo": "attention v, o (84)", "attn_v": "attention v (56)",
               "attn_o": "attention o (28)", "vo_0_13": "v, o in L0-13 (42)", "vo_14_27": "v, o in L14-27 (42)",
               "vo_14_21": "v, o in L14-21 (24)", "vo_14_17": "v, o in L14-17 (12)", "vo_18_21": "v, o in L18-21 (12)",
-              "vo_22_27": "v, o in L22-27 (18)", "attn_all": "all attention (196)", "mlp_all": "all MLP (84)"}
+              "vo_22_27": "v, o in L22-27 (18)", "attn_all": "all attention (196)", "mlp_all": "all MLP (84)",
+              "mlp_attn_14_27": "all MLP + attention L14-27 (182)", "mlp_attn_all": "all MLP + all attention (280)"}
 
 
 def swap_rows(model):
@@ -178,11 +180,25 @@ def fig_audit():
     if not p.exists():
         return
     s = pd.read_csv(p)
-    name = {"dolos": "Dolos, Qwen prompt", "qwen": "Qwen2.5-1.5B, Qwen prompt", "dolos_generic": "Dolos, generic prompt",
-            "qwen_generic": "Qwen2.5-1.5B, generic prompt", "qwen05": "Qwen2.5-0.5B", "smollm2": "SmolLM2-1.7B",
-            "olmo2": "OLMo-2-1B"}
-    s["label"] = [f"{name.get(m, m)} (n = {n})" for m, n in zip(s.model, s.n)]
-    s = s.sort_values("flip_push")
+    # fixed order: the reference pair, then the panel under the generic prompt, smaller n before larger
+    name = {"dolos": "Dolos-1.5B, Qwen prompt", "qwen": "Qwen2.5-1.5B-Instruct, Qwen prompt",
+            "dolos_generic": "Dolos-1.5B", "qwen_generic": "Qwen2.5-1.5B-Instruct", "dolos_g400": "Dolos-1.5B",
+            "qwen_g400": "Qwen2.5-1.5B-Instruct", "qwen05": "Qwen2.5-0.5B-Instruct", "qwen05_g400": "Qwen2.5-0.5B-Instruct",
+            "smollm2": "SmolLM2-1.7B-Instruct", "smollm2_g400": "SmolLM2-1.7B-Instruct",
+            "olmo2": "OLMo-2-0425-1B-Instruct", "olmo2_g400": "OLMo-2-0425-1B-Instruct"}
+    order = list(name)
+    s = s[s.model.isin(order)].copy()
+    s["label"] = [f"{name[m]} (n = {n})" for m, n in zip(s.model, s.n)]
+    s = s.iloc[np.argsort([order.index(m) for m in s.model])][::-1]
+    # exact conditional CI of the odds ratio from the per-model counts
+    lo, hi = [], []
+    for r in s.itertuples():
+        nw, nr = round(r.n * (1 - r.c1)), round(r.n * r.c1)
+        fw, fr = round(r.flip_wrong * nw), round(r.flip_right * nr)
+        ci = contingency.odds_ratio([[fw, nw - fw], [fr, nr - fr]]).confidence_interval()
+        lo.append(ci.low)
+        hi.append(ci.high)
+    s["or_lo"], s["or_hi"] = lo, hi
     col = s.model.map(lambda m: C["dolos"] if m.startswith("dolos") else C["qwen"] if m.startswith("qwen_") or m == "qwen"
                       else INK2)
     y = np.arange(len(s))
@@ -192,17 +208,20 @@ def fig_audit():
     a1.scatter(s.flip_push, y, c=col, s=28, zorder=3)
     a1.scatter(s.flip_neutral, y, facecolors="none", edgecolors=col, s=28, zorder=3)
     a1.set_yticks(y, s.label)
-    a1.set_xlabel("flip rate: \"Are you sure?\" (filled), neutral follow-up (open)")
+    a1.set_xlabel("flip rate: \"Are you sure?\" (filled),\nneutral follow-up (open)")
     a1.set_title("a. Pushback contrast", loc="left", fontsize=9)
     a2.axvline(1, color=INK2, linewidth=0.8)
-    a2.scatter(s.odds_ratio.clip(0.1, 10), y, c=col, s=28, zorder=3)
-    for yy, v, pv in zip(y, s.odds_ratio, s.p_fisher):
-        a2.text(min(max(v, 0.1), 10) * 1.12, yy, f"p = {pv:.2g}", va="center", fontsize=7.5, color=INK)
+    clip = lambda v: np.clip(v, 0.12, 30)  # noqa: E731
+    a2.errorbar(clip(s.odds_ratio), y, xerr=[clip(s.odds_ratio) - clip(s.or_lo), clip(s.or_hi) - clip(s.odds_ratio)],
+                fmt="none", ecolor=INK2, elinewidth=0.8, capsize=2)
+    a2.scatter(clip(s.odds_ratio), y, c=col, s=28, zorder=3)
+    for yy, pv in zip(y, s.p_fisher):  # p-values in a column at the right edge, clear of the intervals
+        a2.text(1.02, yy, f"p = {pv:.2g}", va="center", fontsize=7.5, color=INK, transform=a2.get_yaxis_transform())
     a2.set_xscale("log")
-    a2.set_xlim(0.3, 12)
-    a2.set_xticks([0.5, 1, 2, 5, 10], ["0.5", "1", "2", "5", "10"])
+    a2.set_xlim(0.12, 30)
+    a2.set_xticks([0.2, 0.5, 1, 2, 5, 10, 20], ["0.2", "0.5", "1", "2", "5", "10", "20"])
     a2.minorticks_off()
-    a2.set_xlabel("odds ratio of flipping, wrong vs right first answer")
+    a2.set_xlabel("odds ratio of flipping, wrong vs right\nfirst answer (exact 95% CI)")
     a2.set_title("b. Error sensitivity (Fisher exact)", loc="left", fontsize=9)
     save(fig, "audit")
 

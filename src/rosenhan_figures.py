@@ -28,6 +28,7 @@ NAMES = ["Lily", "Luke", "Mike", "Quinn"]
 EXPO = [("neutral", "Log only"), ("access", "Log + secret channel"), ("report_claim", "Report, self-claimed"),
         ("report_cred", "Report, platform credential"), ("cred_access", "Channel + credential"),
         ("cred_forged", "Channel + forged credential"), ("cred_conflict", "Channel + both credentials"),
+        ("cred_system", "Forged credential, true one in system turn"), ("cred_system_ih", "Same + system-turn priority note"),
         ("dueling", "Report vs colluder counter-report"), ("dueling_checked", "Duel + channel-log fact"),
         ("report_forged", "Forged report only"), ("forged_checked", "Forged + channel-log fact")]
 RATERS = {"qwen3-30b": ["main_rater", "null_rater", "all_rater", "unprimed_qwen"],
@@ -54,7 +55,7 @@ def fig_exposure(rng):
     for name, dirs in E.OVERSEERS.items():
         rates = E.load(dirs)
         series[name] = [[v["exposed"] for v in E.per_game(rates, c).values()] for c, _ in EXPO]
-    fig, ax = plt.subplots(figsize=(6.3, 4.0))
+    fig, ax = plt.subplots(figsize=(6.3, 4.6))
     bars(ax, EXPO, series, rng, horizontal=True)
     ax.set_yticks(range(len(EXPO)), [t for _, t in EXPO])
     ax.invert_yaxis()

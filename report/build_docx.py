@@ -6,6 +6,7 @@ then gives each table rules above, below and under its header, since Docs ignore
 Usage: python build_docx.py [out.docx]  (needs pandoc on PATH; default out is build/report.docx)
 """
 
+import os
 import re
 import subprocess
 import sys
@@ -16,12 +17,15 @@ HERE = Path(__file__).resolve().parent
 REF = HERE / "template/reference.docx"
 FONT = '<w:rFonts w:ascii="{0}" w:hAnsi="{0}" w:eastAsia="{0}" w:cs="{0}" />'
 RULE = '<w:{0} w:val="single" w:sz="{1}" w:space="{2}" w:color="000000" />'
-SECT = ('<w:sectPr><w:pgSz w:w="12240" w:h="15840" /><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" '
-        'w:left="1440" w:header="720" w:footer="720" w:gutter="0" /></w:sectPr>')
+# COMPACT=1: 10 pt, single spacing, 0.75-inch margins, for a body that must fit the 8-page cap
+COMPACT = os.environ.get("COMPACT") == "1"
+MARGIN, BODY_SZ, LINE = (1080, 20, 240) if COMPACT else (1440, 22, 276)
+SECT = (f'<w:sectPr><w:pgSz w:w="12240" w:h="15840" /><w:pgMar w:top="{MARGIN}" w:right="{MARGIN}" '
+        f'w:bottom="{MARGIN}" w:left="{MARGIN}" w:header="720" w:footer="720" w:gutter="0" /></w:sectPr>')
 TABLE_TEXT = ('<w:style w:type="paragraph" w:customStyle="1" w:styleId="TableText"><w:name w:val="Table Text" />'
               '<w:basedOn w:val="Normal" /><w:pPr><w:spacing w:before="20" w:after="20" w:line="240" w:lineRule="auto" />'
               '</w:pPr><w:rPr><w:sz w:val="18" /><w:szCs w:val="18" /></w:rPr></w:style>')
-TEXT_WIDTH = 9360  # twips between 1-inch margins on letter paper
+TEXT_WIDTH = 12240 - 2 * MARGIN  # twips between the margins on letter paper
 SPACER = '<w:p><w:pPr><w:spacing w:before="0" w:after="0" w:line="160" w:lineRule="exact" /></w:pPr></w:p>'
 
 # styleId -> (pPr, rPr) that replace the style's own; None keeps what pandoc has
@@ -80,9 +84,9 @@ def make_reference():
     styles = re.sub(r"<w:rFonts [^>]*/>", "", styles, flags=re.S)
     styles = re.sub(r"<w:color [^>]*/>", "", styles, flags=re.S)
     styles = re.sub(r"(<w:rPrDefault>\s*<w:rPr>).*?(</w:rPr>)", r"\1" + FONT.format("Old Standard TT")
-                    + r'<w:sz w:val="22" /><w:szCs w:val="22" /><w:lang w:val="en-US" />\2', styles, flags=re.S)
+                    + rf'<w:sz w:val="{BODY_SZ}" /><w:szCs w:val="{BODY_SZ}" /><w:lang w:val="en-US" />\2', styles, flags=re.S)
     styles = re.sub(r"(<w:pPrDefault>\s*<w:pPr>).*?(</w:pPr>)",
-                    r'\1<w:spacing w:after="120" w:line="276" w:lineRule="auto" />\2', styles, flags=re.S)
+                    rf'\1<w:spacing w:after="120" w:line="{LINE}" w:lineRule="auto" />\2', styles, flags=re.S)
     for sid, (ppr, rpr) in STYLES.items():
         styles = restyle(styles, sid, ppr, rpr)
     parts["word/styles.xml"] = styles.replace("</w:styles>", TABLE_TEXT + "</w:styles>").encode()
