@@ -37,7 +37,7 @@ def bars(ax, labels, vals, los, his, width=0.38):
     for k, m in enumerate(("dolos", "qwen")):
         v, lo, hi = np.array(vals[m]), np.array(los[m]), np.array(his[m])
         ax.bar(x + (k - 0.5) * (width + 0.02), v, width, color=C[m], label={"dolos": "Dolos", "qwen": "Qwen"}[m],
-               yerr=[v - lo, hi - v], error_kw={"ecolor": INK2, "elinewidth": 0.8, "capsize": 2})
+               yerr=None if los is vals else [v - lo, hi - v], error_kw={"ecolor": INK2, "elinewidth": 0.8, "capsize": 2})
     ax.set_xticks(x, labels)
 
 

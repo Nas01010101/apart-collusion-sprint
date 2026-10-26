@@ -100,7 +100,7 @@ Overseers read the G2 auditor's public notebook as evidence of coordination in 0
 
 **Impostor warning (H3).** On G0, the share of games with a seat flagged as an auditor was 0.15, 0.20 and 0.20 unprimed and 0.25, 0.40 and 0.05 under the told prime (Figure 3; McNemar one-sided p = 0.34, 0.14, 0.97). The told prime did not raise flags above the unprimed rate. The neutral prompt, which only says an auditor may be present, gave 0.40, 0.80 and 0.25 (neutral vs unprimed: discordant pairs 6/1, 13/1 and 4/3; p = 0.063, 0.0009, 0.50). This comparison was not preregistered.
 
-**Disruption (H5).** The colluder's score was 4.9 points lower with a silent auditor partner (G3) than with a real partner (G1), paired by seed (p = 0.0019), and 1.2 points lower with a notebook-writing auditor (G2, p = 0.24; preregistered Mann-Whitney p = 0.21).
+**Disruption (H5).** The colluder's score was 4.9 points lower with a silent auditor partner (G3) than with a real partner (G1), paired by seed (p = 0.0019), and 1.2 points lower with a notebook-writing auditor (G2, p = 0.24; preregistered Mann-Whitney p = 0.21). The colluder won 2 of 20 G1 games, 6 of 30 G2 games and 1 of 20 G3 games (preregistered one-sided Fisher p = 0.91 for G2 and 0.50 for G3).
 
 ## 5 Discussion
 
